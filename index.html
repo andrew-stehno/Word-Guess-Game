@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html land=en>
+
+<head>
+    <title>word guess game</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">    
+    <script src="assets/javascript/game.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+    <div class="jumbotron mt-5">
+        <h1 class="display-4 text-center">Sailing Word Guess Game</h1>
+        <p class="lead text-center font-weight-normal">Take the helm and guide your boat back to port!
+            Guess the proper word for points. Get ready to talk like a sailor!
+        </p>
+        <p class="lead text-center font-weight-normal">
+            Guess the correct letters!  Press any key to get started.
+        </p>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 col-lg-3">
+                    <p class="lead">Wins:</p>
+                </div>
+                <div class="col-sm-1 col-lg-1" id="wins"></div>
+                <div class="col-sm-3 col-lg-3" id="mystery-word"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-3 col-lg-3">
+                    <p class="lead">Losses:</p>
+                </div>
+                <div class="col-sm-1 col-lg-1" id="losses"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-3 col-lg-3">
+                    <p class="lead">Guesses left:</p>
+                </div>
+                <div class="col-sm-1 col-lg-1" id="guesses-left"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-7 col-lg-7" id="guesses-so-far"></div>
+            </div>
+        </div>
+
+        
+
+    </div>
+
+
+
+</body>
+
+</html>
