@@ -17,7 +17,7 @@ console.log("computer guess: " + computerGuess);
 let blankDisplay = generateBlanks(computerGuess);
 //let blankDisplay = computerGuess.split('').map(_=>'_');
 console.log(blankDisplay);
-let guessesLeft = 12
+let guessesLeft = 15
 // create a blank array of user guesses
 let guessesSoFar = [];
 let wins = 0
@@ -41,7 +41,18 @@ const allLetters = ("abcdefghijklmnopqrstuvwxyz").split("")
 function displayAll() {
     //This hsould update ALL values in the DOM
     document.getElementById("mystery-word").innerHTML = "<p>" + blankDisplay.join(' ') + "<p>";
+    document.getElementById("wins").innerHTML = wins;
+    document.getElementById("losses").innerHTML = losses;
+    document.getElementById("guesses-left").innerHTML = guessesLeft;
+    document.getElementById("guesses-so-far").innerHTML = guessesSoFar;
 }
+
+function reset() {
+    guessesLeft = 15;
+    guessesSoFar = [];
+    document.getElementById("mystery-word").innerHTML = "<p>" + blankDisplay.join(' ') + "<p>";
+}
+
 const isWordComplete = () => !blankDisplay.some(char => char === '_');
 // any key to start
 document.onkeyup = function (event) {
@@ -65,13 +76,25 @@ document.onkeyup = function (event) {
         if(isWordComplete()){
             //user has won
             wins++
-            alert("Congratulations!");
+            // guessesLeft = 15;
+            // guessesSoFar = [];
+            // alert("Congratulations!");
+            reset();
+            
         }
+        else {
+            function guessFunc () {
+                guessesSoFar.push(userGuess);
+                document.getElementById("guesses-so-far").innerHTML = guessesSoFar;
+            } guessFunc();
+        }
+
         //We need to check has the user Lost
         if(guessesLeft === 0){
-            //user lost
             losses++
-            alert("You Lose!");
+            // guessesSoFar = [];
+            // alert("You Lose!");
+            reset();
         }
     displayAll();
 
